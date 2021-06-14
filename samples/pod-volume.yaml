@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-volume
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      volumeMounts:
+        - mountPath: /data
+          name: first-volume
+    - name: jenkins-container
+      image: jenkins:alpine
+      volumeMounts:
+        - mountPath: /data
+          name: first-volume
+  volumes:
+    - name: first-volume
+      hostPath:
+        path: /Users/claudiojoao/dev/estudos/kubernetes/data
+        type: Directory

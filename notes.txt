@@ -1,0 +1,41 @@
+kubectl get pods -> listagem de todos os pods ativos
+kubectl get pods -o wide -> mostra mais informações do pod
+kubectl get pods --watch -> monitora a listagem de pods
+
+kubectl get service -> listagem de serviços
+
+kubectl get configmap -> listagem de configmaps
+
+kubectl get rs -> listagem de replica sets
+
+kubectl get deployments -> listagem de deployments
+
+kubectl get pvc -> listagem dos persistent volume claim
+
+kubectl get pv -> listagem dos persistent volumes
+
+kubectl get hpa -> listagem dos hpas
+
+kubectl describe pod nginx-pod -> descreve o pod com nome nginx-pod
+
+kubectl run nginx-pod --image=nginx:latest -> criação de um pod com o nome nginx-pod e com a imagem nginx:latest
+
+kubectl edit pod nginx-pod -> editar as configurações do pod nginx-pod
+
+kubectl delete pod nginx-pod -> remover um pod
+kubectl delete -f first-pod.yaml -> remover um pod de acordo com um arquivo de configuração
+kubectl delete pods --all -> remove todos os pods
+kubectl delete service --all -> remove todos os serviços
+kubectl delete deployment nginx-deployment -> remove o deployment
+
+kubectl apply -f pod-1.yaml -> inicia um pod com as configurações do arquivo pod-1.yaml
+kubectl apply -f nginx-deployment.yaml --record -> adicionar no controle de versão do deployment 
+
+kubectl exec -ti news-portal -- bash -> entrar dentro do container com o bash
+
+kubectl rollout history deployment news-portal-deployment -> histórico do controle de versão
+
+kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Setting image version with latest" -> alterando o change-cause do controle de versão
+
+kubectl rollout undo deployment nginx-deployment --to-revision=1 -> fazendo o rollback para uma versão em específico
+
